@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── Publicly readable collections ───────────────────────
+    match /interview_categories/{categoryId} {
+      allow read: if true;
+      allow write: if false;
+
+      // Cache of AI-generated questions
+      match /generated_questions/{questionDoc} {
+        allow read: if true;
+        allow write: if request.auth != null;
+      }
+    }
+
+    match /quotes/{quoteId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // ── User-scoped data ─────────────────────────────────────
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+
+      match /interviews/{interviewId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      match /stats/{statDoc} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    // ── Default deny ─────────────────────────────────────────
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

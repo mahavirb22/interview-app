@@ -1,0 +1,68 @@
+name: sad_cp
+description: "Trainee AI — Interview Preparation App"
+publish_to: "none"
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.3.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # Firebase
+  firebase_core: ^4.7.0
+  firebase_auth: ^6.4.0
+  cloud_firestore: ^6.3.0
+
+  # State management
+  provider: ^6.1.2
+
+  # Storage
+  shared_preferences: ^2.3.5
+
+  # Networking
+  http: ^1.6.0
+
+  # UI
+  google_fonts: ^6.2.1
+  shimmer: ^3.0.0
+  flutter_animate: ^4.5.0
+  intl: ^0.20.2
+
+  # ID generation
+  uuid: ^4.5.1
+
+  # Audio
+  record: ^6.2.0
+  path_provider: ^2.1.5
+  permission_handler: ^11.4.0
+  speech_to_text: ^7.3.0
+
+  # Charts
+  fl_chart: ^0.70.2
+
+  # Media
+  cached_network_image: ^3.4.1
+  flutter_dotenv: ^6.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - .env
+    - assets/images/dashboard/
+    - assets/images/interview/
+    - assets/images/landing/
+    - assets/images/results/
+    - assets/images/auth/
+    - assets/images/profile/
+    - assets/icons/
+    - assets/illustrations/
