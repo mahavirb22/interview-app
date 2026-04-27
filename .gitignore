@@ -1,4 +1,4 @@
-﻿# Miscellaneous
+# Miscellaneous
 *.class
 *.log
 *.pyc
@@ -43,16 +43,4 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-
-# Environment files
 .env
-.env.*
-!.env.example
-!.env.sample
-
-# Local Firebase config (safer for public repos)
-android/app/google-services.json
-ios/Runner/GoogleService-Info.plist
-
-# Local backup artifacts
-/lib.zip
